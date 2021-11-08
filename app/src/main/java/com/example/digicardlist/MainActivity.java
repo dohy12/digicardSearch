@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setSearchBar();
+
+        try {
+            search("st1-");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-
 
     public void onClickSearch(View view){
         EditText editText = findViewById(R.id.search_bar);
@@ -151,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             createShowCard(cards.get(i), pos);
         }
 
-        int maxPage = (int)Math.ceil(cards.size()/24.0f);
+        int maxPage = Math.max((int)Math.ceil((cards.size()-1)/24.0f),1);
         TextView tv = findViewById(R.id.text_page);
         tv.setText(page + " / " + maxPage);
 
