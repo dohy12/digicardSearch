@@ -1,0 +1,48 @@
+번호|분류번호|이름|카드종류|카드 색|레벨|세대|속성|종|DP|코스트|진화코스트1|진화코스트2|효과|진화원효과|시큐리티효과|promo|img|검색용 키워드|페러렐
+1|ST1-01|코로몬|디지타마카드|빨강|2|유년기|-|렛서형|-|-|-|-|-|[자신의 턴] 이 디지몬의 진화 소재가 4장 이상일 경우, 이 디지몬의 DP를 + 1000한다.|-|start deck Gaia Red [ST-1]|st1_01|Koromon|n
+2|ST1-02|피요몬|디지몬카드|빨강|3|성장기|백신종|병아리형|3000|2|0 from Lv.2|-|-|-|-|start deck Gaia Red [ST-1]|st1_02|PIYOMON, Biyomon|n
+3|ST1-02|피요몬|디지몬카드|빨강|3|성장기|백신종|병아리형|3000|2|0 from Lv.2|-|-|-|-|1st year Anniversary adventure pack|st1_02pr1|PIYOMON, Biyomon|PR
+4|ST1-03|아구몬|디지몬카드|빨강|3|성장기|백신종|파충류형|2000|3|0 from Lv.2|-|-|[자신의 턴] 이 디지몬의 DP를 +1000한다.|-|start deck Gaia Red [ST-1]|st1_03|Agumon|n
+5|ST1-04|드라코몬|디지몬카드|빨강|3|성장기|데이터종|용형|4000|3|0 from Lv.2|-|-|-|-|start deck Gaia Red [ST-1]|st1_04|Dracomon|n
+6|ST1-05|버드라몬|디지몬카드|빨강|4|성숙기|백신종|거대새형|5000|4|2 from Lv.3|-|-|-|-|start deck Gaia Red [ST-1]|st1_05|Birdramon|n
+7|ST1-06|코어드라몬|디지몬카드|빨강|4|성숙기|바이러스종|용형|6000|5|2 from Lv.3|-|[블로커], [어택 시] 메모리를 -2한다.|-|-|start deck Gaia Red [ST-1]|st1_06|Coredramon|n
+8|ST1-07|그레이몬|디지몬카드|빨강|4|성숙기|백신종|공룡형|4000|5|2 from Lv.3|-|-|[시큐리티 어택 +1]|-|start deck Gaia Red [ST-1]|st1_07|Greymon|n
+9|ST1-07|그레이몬|디지몬카드|빨강|4|성숙기|백신종|공룡형|4000|5|2 from Lv.3|-|-|[시큐리티 어택 +1]|-|start deck Gaia Red [ST-1]|st1_07pr1|Greymon|PR
+10|ST1-08|가루다몬|디지몬카드|빨강|5|완전체|백신종|조인형|7000|6|3 from Lv.4|-|[진화 시] 이 턴 중, 자신의 디지몬 1체의 DP를 +3000한다.|-|-|start deck Gaia Red [ST-1]|st1_08|Garudamon|n
+11|ST1-08|가루다몬|디지몬카드|빨강|5|완전체|백신종|조인형|7000|6|3 from Lv.4|-|[진화 시] 이 턴 중, 자신의 디지몬 1체의 DP를 +3000한다.|-|-|Tamer Battle Pack 2|st1_08pr1|Garudamon|PR
+12|ST1-09|메탈그레이몬|디지몬카드|빨강|5|완전체|백신종|사이보그형|7000|7|3 from Lv.4|-|-|[자신의 턴] 이 디지몬이 블록당했을 때, 메모리를 +3한다.|-|start deck Gaia Red [ST-1]|st1_09|Metalgreymon|n
+13|ST1-09|메탈그레이몬|디지몬카드|빨강|5|완전체|백신종|사이보그형|7000|7|3 from Lv.4|-|-|[자신의 턴] 이 디지몬이 블록당했을 때, 메모리를 +3한다.|-|Tamer Battle Pack 1|st1_09pr1|Metalgreymon|PR
+14|ST1-09|메탈그레이몬|디지몬카드|빨강|5|완전체|백신종|사이보그형|7000|7|3 from Lv.4|-|-|[자신의 턴] 이 디지몬이 블록당했을 때, 메모리를 +3한다.|-|Winner prize for Aug./Sep.2020 Tamer Battle|st1_09pr2|Metalgreymon|PR
+15|ST1-10|호우호우몬|디지몬카드|빨강|6|궁극체|백신종|성수형|12000|10|2 from Lv.5|-|-|-|-|start deck Gaia Red [ST-1]|st1_10|페닉스몬, 피닉스몬, Hououmon, Phoenixmon|n
+16|ST1-10|호우호우몬|디지몬카드|빨강|6|궁극체|백신종|성수형|12000|10|2 from Lv.5|-|-|-|-|booster DOUBLE DIAMOND [BT-06]|st1_10pr1|페닉스몬, 피닉스몬, Hououmon, Phoenixmon|PR
+17|ST1-11|워그레이몬|디지몬카드|빨강|6|궁극체|백신종|용인형|12000|12|4 from Lv.5|-|-|[자신의 턴] 이 디지몬의 진화 소재 2장당, 이 디지몬은 [시큐리티 어택 +1]을 얻는다.|-|start deck Gaia Red [ST-1]|st1_11|Wargreymon|n
+18|ST1-11|워그레이몬|디지몬카드|빨강|6|궁극체|백신종|용인형|12000|12|4 from Lv.5|-|-|[자신의 턴] 이 디지몬의 진화 소재 2장당, 이 디지몬은 [시큐리티 어택 +1]을 얻는다.|-|Prize for Challenge Cup|st1_11pr1|Wargreymon|PR
+19|ST1-12|신태일|테이머카드|빨강|-|-|-|-|-|-|-|-|[자신의 턴] 자신의 디지몬 전부의 DP를 +1000한다.||[시큐리티] 이 카드를 코스트 지불하지 않고 등장시킬 수 있다.|start deck Gaia Red [ST-1]|st1_12|타이치, 야가미 타이치, Taichi|n
+20|ST1-13|섀도우 윙|옵션카드|빨강|-|-|-|-|-|1|-|-|[메인] 이 턴 중, 자신의 디지몬 1체의 DP를 +3000한다.|-|[시큐리티] 다음 자신의 턴 종료시까지 자신의 디지몬 전부는 [시큐리티 어택 +1]을 얻는다.|start deck Gaia Red [ST-1]|st1_13|Shadow wing|n
+21|ST1-14|스타라이트 익스플로전|옵션카드|빨강|-|-|-|-|-|2|-|-|[메인] 다음 상대의 턴 종료시까지 자신의 시큐리티 디지몬 전부의 DP를 +7000한다.|-|[시큐리티] 이 턴 중, 자신의 시큐리티 디지몬 전부의 DP를 +7000한다.|start deck Gaia Red [ST-1]|st1_14|Starlite explosion|n
+22|ST1-15|기가 디스트로이어|옵션카드|빨강|-|-|-|-|-|6|-|-|[메인] DP 4000 이하의 상대의 디지몬 2체를 소멸시킨다.|-|[시큐리티] 이 카드의 [메인] 효과를 발휘한다.|start deck Gaia Red [ST-1]|st1_15|Giga destroyer|n
+23|ST1-16|가이아포스|옵션카드|빨강|-|-|-|-|-|8|-|-|[메인] 상대의 디지몬 1체를 소멸시키낟.|-|[시큐리티] 이 카드의 [메인] 효과를 발휘한다.|start deck Gaia Red [ST-1]|st1_16|Gaia force|n
+24|ST1-16|가이아포스|옵션카드|빨강|-|-|-|-|-|8|-|-|[메인] 상대의 디지몬 1체를 소멸시키낟.|-|[시큐리티] 이 카드의 [메인] 효과를 발휘한다.|start deck Gallantmon[ST-7]|st1_16pr1|Gaia force|PR
+25|ST2-01|뿔몬|디지타마카드|파랑|2|유년기|-|렛서형|-|-|-|-|-|[자신의 턴] 진화원을 지니지 않은 상대의 디지몬과 배틀할 때, 이 디지몬의 DP를 + 1000한다.|-|start deck Cocytus Blue [ST-2]|st2_01|Tsunomon|n
+26|ST2-02|쉬라몬|디지몬카드|파랑|3|성장기|백신종|해수형|3000|2|0 from Lv.2|-|-|-|-|start deck Cocytus Blue [ST-2]|st2_02|Gomamon|n
+27|ST2-02|쉬라몬|디지몬카드|파랑|3|성장기|백신종|해수형|3000|2|0 from Lv.2|-|-|-|-|1st year Anniversary adventure pack|st2_02pr1|Gomamon|pr
+28|ST2-03|파피몬|디지몬카드|파랑|3|성장기|데이터종|파충류형|2000|3|0 from Lv.2|-|-|[어택 시] 레벨 5이하의 상대 디지몬 1체의 진화 소재를, 아래에서 1장 파기한다.|-|start deck Cocytus Blue [ST-2]|st2_03|가부몬, Gabumon|n
+29|ST2-04|베어몬|디지몬카드|파랑|3|성장기|백신종|짐승형|4000|3|0 from Lv.2|-|-|-|-|start deck Cocytus Blue [ST-2]|st2_04|Grizzlymon|n
+30|ST2-05|원뿔몬|디지몬카드|파랑|4|성숙기|백신종|바다짐승형|5000|4|2 from Lv.3|-|-|-|-|start deck Cocytus Blue [ST-2]|st2_05|Ikkakumon|n
+31|ST2-06|가루몬|디지몬카드|파랑|4|성숙기|백신종|짐승형|4000|5|2 from Lv.3|-|-|[어택 시] 상대 디지몬 1체의 진화원을 아래에서 1장 파기한다.|-|start deck Cocytus Blue [ST-2]|st2_06|가루루몬, Garurumon|n
+32|ST2-06|가루몬|디지몬카드|파랑|4|성숙기|백신종|짐승형|4000|5|2 from Lv.3|-|-|[어택 시] 상대 디지몬 1체의 진화원을 아래에서 1장 파기한다.|-|start deck Cocytus Blue [ST-2]|st2_06pr1|가루루몬, Garurumon|PR
+33|ST2-07|그리즈몬|디지몬카드|파랑|4|성숙기|백신종|짐승형|6000|5|2 from Lv.3|-|[블로커], [어택 시] 메모리를 -2한다.|-|-|start deck Cocytus Blue [ST-2]|st2_07|Grizzlymon|n
+34|ST2-07|그리즈몬|디지몬카드|파랑|4|성숙기|백신종|짐승형|6000|5|2 from Lv.3|-|[블로커], [어택 시] 메모리를 -2한다.|-|-|Tamer Battle Pack 6|st2_07pr1|Grizzlymon|pr
+35|ST2-08|워가루몬|디지몬카드|파랑|5|완전체|백신종|수인형|7000|7|3 from Lv.4|-|-|[자신의 턴] 진화 소재를 지니지 않은 상대의 디지몬이 존재한다면, 이 디지몬은 [시큐리티 어택 +1]을 얻는다.|-|start deck Cocytus Blue [ST-2]|st2_08|워가루루몬, WereGarurumon|n
+36|ST2-08|워가루몬|디지몬카드|파랑|5|완전체|백신종|수인형|7000|7|3 from Lv.4|-|-|[자신의 턴] 진화 소재를 지니지 않은 상대의 디지몬이 존재한다면, 이 디지몬은 [시큐리티 어택 +1]을 얻는다.|-|Tamer Battle Pack 2|st2_08pr1|워가루루몬, WereGarurumon|PR
+37|ST2-08|워가루몬|디지몬카드|파랑|5|완전체|백신종|수인형|7000|7|3 from Lv.4|-|-|[자신의 턴] 진화 소재를 지니지 않은 상대의 디지몬이 존재한다면, 이 디지몬은 [시큐리티 어택 +1]을 얻는다.|-|Winner prize for Oct.2020 Tamer Battle|st2_08pr2|워가루루몬, WereGarurumon|PR
+38|ST2-09|쥬드몬|디지몬카드|파랑|5|완전체|백신종|바다짐승형|7000|6|3 from Lv.4|-|[진화 시] 상대의 디지몬 1체의 진화원을 아래에서 2장 파기한다.|-|-|start deck Cocytus Blue [ST-2]|st2_09|Zudomon|N
+39|ST2-09|쥬드몬|디지몬카드|파랑|5|완전체|백신종|바다짐승형|7000|6|3 from Lv.4|-|[진화 시] 상대의 디지몬 1체의 진화원을 아래에서 2장 파기한다.|-|-|Tamer Battle Pack 1|st2_09pr1|Zudomon|PR
+40|ST2-10|플레시오몬|디지몬카드|파랑|6|궁극체|데이터종|수장룡형|12000|10|2 from Lv.5|-|-|-|-|start deck Cocytus Blue [ST-2]|st2_10|프레시오몬, Plesiomon|N
+41|ST2-11|메탈가루몬|디지몬카드|파랑|6|궁극체|데이터종|사이보그형|11000|12|4 from Lv.5|-|[어택 시] [턴 1회] 이 디지몬을 액티브한다.|-|-|start deck Cocytus Blue [ST-2]|st2_11|메탈가루루몬, MetalGarurumon|N
+42|ST2-12|매튜|테이머카드|파랑|-|-|-|-|-|2|-|-|[자신의 턴 시작 시] 진화원이 없는 상대 디지몬이 있다면, 메모리를 +1한다.|-|[시큐리티] 이 카드를 코스트 지불하지 않고 등장시킬 수 있다.|start deck Cocytus Blue [ST-2]|st2_12|이시다 야마토, Yamato Ishida|N
+43|ST2-13|햄머스파크|옵션카드|파랑|-|-|-|-|-|0|-|-|[메인] 메모리를 +1한다.||[시큐리티] 메모리를 +2한다.|start deck Cocytus Blue [ST-2]|st2_13|Vulcan's Hammer|N
+44|ST2-13|햄머스파크|옵션카드|파랑|-|-|-|-|-|0|-|-|[메인] 메모리를 +1한다.||[시큐리티] 메모리를 +2한다.|start deck UlforceVeedramon[ST-8]|st2_13pr1|Vulcan's Hammer|pr
+45|ST2-14|소로블루|옵션카드|파랑|-|-|-|-|-|2|-|-|[메인] 진화 소재가 없는 상대의 디지몬 1체를 선택한다. 그 디지몬은 다음 상대의 턴 종료 시까지 공격하거나 블록할 수 없다.||[시큐리티] 진화 소재가 없는 상대의 디지몬 1체를 선택한다. 그 디지몬은 다음 상대의 턴 종료 시까지 공격하거나 블록할 수 없다.|start deck Cocytus Blue [ST-2]|st2_14|Sorrow Blue|N
+46|ST2-15|카이저네일|옵션카드|파랑|-|-|-|-|-|4|-|-|[메인] 자신의 디지몬 1체의 진화소재에서 디지몬 카드를 1장까지 선택하고, 그 디지몬을 코스트를 지불하지 않고 별개의 디지몬으로 등장시킨다.|-|[시큐리티] 이 카드의 [메인] 효과를 발휘한다.|start deck Cocytus Blue [ST-2]|st2_15|Kaiser Nail|N
+47|ST2-16|코큐도스 브레스|옵션카드|파랑|-|-|-|-|-|7|-|-|[메인] 상대 디지몬 1체를 패로 되돌린다. 그 디지몬의 진화 소재는 전부 파기한다.|-|[시큐리티] 이 카드의 [메인] 효과를 발휘한다.|start deck Cocytus Blue [ST-2]|st2-16|Cocytus Breath|N

@@ -3,6 +3,7 @@ package com.example.digicardlist;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -57,7 +58,19 @@ public class CardInfo extends DialogFragment implements View.OnClickListener{
 
         ((Button)v.findViewById(R.id.button_close)).setOnClickListener(this);
 
+        setColor(v);
         setCardImg(v);
+    }
+
+    public void setColor(View v){
+        ((TextView)v.findViewById(R.id.text_cardKind)).setTextColor(Color.parseColor(card.getColorStr()));
+        ((TextView)v.findViewById(R.id.text_cardLevel)).setBackgroundColor(Color.parseColor(card.getColorStr()));
+        ((TextView)v.findViewById(R.id.text_cardName)).setTextColor(Color.parseColor(card.getColorStr()));
+
+        for(int i=0;i<11;i++){
+            int k = getResources().getIdentifier("text_color"+(i+1),"id",v.getContext().getPackageName());
+            ((TextView)v.findViewById(k)).setTextColor(Color.parseColor(card.getColorStr()));
+        }
     }
 
     public void setCardImg(View v){

@@ -15,6 +15,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
+
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"
+            android:id="@+id/search_bar"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:padding="5dp"
@@ -24,7 +29,7 @@
             android:layout_height="wrap_content" />
 
         <Button
-
+            android:onClick="onClickSearch"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="검색"/>
@@ -32,59 +37,94 @@
     </LinearLayout>
 
 
-
-    <GridLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/search_grid"
-        android:columnCount="4">
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:adjustViewBounds="true"
-            android:layout_columnWeight="1"
-            android:src="@drawable/test"/>
+            <GridLayout
+                android:id="@+id/search_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:layout_columnWeight="1"
-            android:layout_gravity=""
-            android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/test" />
 
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:src="@drawable/test"/>
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:src="@drawable/test"/>
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:src="@drawable/test"/>
-        <ImageView
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/test" />
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/test" />
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/test" />
 
-    </GridLayout>
+                <TextView
+                    android:id="@+id/card_id"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:onClick="goPrevPage"
+                    android:id="@+id/text_page_button1"
+                    android:enabled="false"
+                    android:textSize="12dp"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="prev"/>
+
+                <TextView
+                    android:id="@+id/text_page"
+                    android:textColor="#000000"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 / 30"/>
+
+                <Button
+                    android:onClick="goNextPage"
+                    android:id="@+id/text_page_button2"
+                    android:textSize="12dp"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="Next"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 
 </LinearLayout>
