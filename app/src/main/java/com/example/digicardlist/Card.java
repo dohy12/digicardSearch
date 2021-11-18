@@ -17,7 +17,7 @@ public class Card {
     public String cardSecurity;
     public String cardPromo;
     public String cardImgSrc;
-    public boolean cardPr;
+    public String cardPr;
     public String cardColor;
 
     public Card(String[] cardInfo){
@@ -36,19 +36,29 @@ public class Card {
         this.cardEffect = cardInfo[13];
         this.cardEvEffect = cardInfo[14];
         this.cardSecurity = cardInfo[15];
-        this.cardPromo = cardInfo[16];
-        this.cardImgSrc = cardInfo[17];
-        this.cardPr = (cardInfo[19].toUpperCase().equals("PR"));
+        this.cardPr = cardInfo[17];
     }
 
     public String getColorStr(){
         switch (cardColor){
-            case "빨강" : return "#d50000";
-            case "파랑" : return "#189fed";
-            case "노랑" : return "#f0ac09";
-            case "초록" : return "#00bd97";
-            case "보라" : return "#752ae6";
-            case "검정" : return "#000000";
+            case "빨강" :
+            case "적색" :
+                return "#d50000";
+            case "파랑" :
+            case "청색" :
+                return "#189fed";
+            case "노랑" :
+            case "황색" :
+                return "#f0ac09";
+            case "초록" :
+            case "녹색" :
+                return "#00bd97";
+            case "보라" :
+            case "자색" :
+                return "#752ae6";
+            case "검정" :
+            case "흑색" :
+                return "#000000";
             default: return "#999999";
         }
     }

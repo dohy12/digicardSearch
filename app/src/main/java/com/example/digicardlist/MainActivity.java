@@ -2,8 +2,11 @@ package com.example.digicardlist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -18,9 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.security.Key;
 import java.util.ArrayList;
 
@@ -53,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void createShowCard(Card card, int pos){
+    public ImgView_Card createShowCard(Card card, int pos){
         RelativeLayout rl = new RelativeLayout(this);
 
         ImageView iv = new ImageView(this);
-        iv.setImageResource(getResources().getIdentifier(card.cardImgSrc,"raw", this.getPackageName()));//이미지 설정
+        //iv.setImageResource(getResources().getIdentifier(card.cardImgSrc,"raw", this.getPackageName()));//이미지 설정
 
         TextView tv = new TextView(this);
         tv.setText(Integer.toString(pos + (page-1)*24));
@@ -66,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         rl.addView(iv, new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
         rl.addView(tv, new RelativeLayout.LayoutParams(0,0));
 
-        if (card.cardPr){ //페러렐 레어
+        if (card.cardPr.toUpperCase().substring(0,1).equals("P")){ //페러렐 레어
             TextView tvPR = new TextView(this);
             tvPR.setText("PR");
             tvPR.setBackgroundColor(Color.parseColor(card.getColorStr()));
@@ -98,7 +106,25 @@ public class MainActivity extends AppCompatActivity {
                 showFragement(card_id);
             }
         });
-        return;
+
+        return new ImgView_Card(iv, card);
+
+        //return new ImgView_Src(iv, card.cardImgSrc);
+    }
+
+    public void setImage(ArrayList<ImgView_Card> list){
+
+        for(int i=0;i<list.size();i++) {
+            ImgView_Card ivCard = list.get(i);
+            String pr_str = (ivCard.card.cardPr.toUpperCase().substring(0,1).equals("P"))?"_"+ivCard.card.cardPr.toUpperCase():"";
+            String img_str = "https://en.digimoncard.com/images/cardlist/card/" + ivCard.card.cardID + pr_str + ".png";
+
+            Glide.with(this)
+                    .load(img_str)
+                    .override(200,300)
+                    .thumbnail(0.1f)
+                    .into(ivCard.iv);
+        }
     }
 
 
@@ -135,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             boolean search_ch = false;
             if(cardInfo[1].toUpperCase().contains(searchStr.toUpperCase())) search_ch = true;
             if(cardInfo[2].contains(searchStr)) search_ch = true;
-            if(cardInfo[18].toUpperCase().contains(searchStr.toUpperCase())) search_ch = true;
+            if(cardInfo[16].toUpperCase().contains(searchStr.toUpperCase())) search_ch = true;
 
             if(search_ch){
                 Card card = new Card(cardInfo);
@@ -150,9 +176,11 @@ public class MainActivity extends AppCompatActivity {
     public void showPage(){
         clearView();
 
+        ArrayList<ImgView_Card> imgView_srcs = new ArrayList<>();
+
         int pos = 0;
         for(int i = (page-1)*24;i<Math.min(page*24,cards.size());i++,pos++){
-            createShowCard(cards.get(i), pos);
+            imgView_srcs.add(createShowCard(cards.get(i), pos));
         }
 
         int maxPage = Math.max((int)Math.ceil((cards.size()-1)/24.0f),1);
@@ -161,6 +189,8 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.text_page_button1).setEnabled(page != 1);
         findViewById(R.id.text_page_button2).setEnabled(page != maxPage);
+
+        setImage(imgView_srcs);
     }
 
     public void goNextPage(View view){
@@ -199,4 +229,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private class ImgView_Card{
+        public ImageView iv;
+        public Card card;
+
+        public ImgView_Card(ImageView iv, Card card){
+            this.iv = iv;
+            this.card = card;
+        }
+
+    }
+
+    private class OpenHttpConnection extends AsyncTask<Object, Void, Bitmap>{
+        private ImageView bmImage;
+        @Override
+        protected Bitmap doInBackground(Object... params) {
+            Bitmap mBitmap = null;
+            bmImage = (ImageView)params[0];
+            String url = (String)params[1];
+            InputStream in = null;
+            try{
+                in = new java.net.URL(url).openStream();
+                mBitmap = BitmapFactory.decodeStream(in);
+                in.close();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+            return mBitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            bmImage.setImageBitmap(bitmap);
+        }
+    }
+
 }
+

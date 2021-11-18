@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndexActivity">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:onClick="onClickBtn1"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/nanum"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/border_coner3"
+            android:text="카드 리스트"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#999999"
+            android:fontFamily="@font/nanum"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/border_coner3"
+            android:text="덱 편집"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#999999"
+            android:fontFamily="@font/nanum"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/border_coner3"
+            android:text="룰 가이드"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#999999"
+            android:fontFamily="@font/nanum"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/border_coner3"
+            android:text="메모리 게이지"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#999999"
+            android:fontFamily="@font/nanum"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/border_coner3"
+            android:text="우승덱 정보"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+</FrameLayout>
