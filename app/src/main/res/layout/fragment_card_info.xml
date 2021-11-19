@@ -306,6 +306,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanum"
                     android:textColor="#5e5e5e"
+                    android:lineSpacingMultiplier="1.3"
                     android:text="-"/>
             </LinearLayout>
 
@@ -332,6 +333,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanum"
                     android:textColor="#5e5e5e"
+                    android:lineSpacingMultiplier="1.3"
                     android:text="-"/>
             </LinearLayout>
 
@@ -358,6 +360,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanum"
                     android:textColor="#5e5e5e"
+                    android:lineSpacingMultiplier="1.3"
                     android:text="-"/>
             </LinearLayout>
 

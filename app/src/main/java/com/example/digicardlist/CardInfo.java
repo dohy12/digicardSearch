@@ -58,9 +58,9 @@ public class CardInfo extends DialogFragment implements View.OnClickListener{
         ((TextView)v.findViewById(R.id.text_cardDP)).setText(card.cardDP);
         ((TextView)v.findViewById(R.id.text_cardEvCost1)).setText(card.cardEvCost1);
         ((TextView)v.findViewById(R.id.text_cardEvCost2)).setText(card.cardEvCost2);
-        ((TextView)v.findViewById(R.id.text_effect)).setText(card.cardEffect);
-        ((TextView)v.findViewById(R.id.text_digiEffect)).setText(card.cardEvEffect);
-        ((TextView)v.findViewById(R.id.text_security)).setText(card.cardSecurity);
+        ((TextView)v.findViewById(R.id.text_effect)).setText(card.cardEffect.replace("<LB>","\n"));
+        ((TextView)v.findViewById(R.id.text_digiEffect)).setText(card.cardEvEffect.replace("<LB>","\n"));
+        ((TextView)v.findViewById(R.id.text_security)).setText(card.cardSecurity.replace("<LB>","\n"));
 
         ((Button)v.findViewById(R.id.button_close)).setOnClickListener(this);
 
