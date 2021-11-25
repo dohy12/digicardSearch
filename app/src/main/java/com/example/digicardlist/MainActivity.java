@@ -31,8 +31,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.Key;
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+    static final String RETROFIT_TAG = "retrofitTest";
     ArrayList<Card> cards;
 
     int page = 1;
@@ -40,25 +48,57 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         setSearchBar();
 
-        try {
-            search("st1-");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        searchFromApi("st1-");
+    }
+
+    public void searchFromApi(String search){
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://54.180.112.140:8080/firstSpring2/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService servicel = retrofit.create(RetrofitService.class);
+
+        Call<Result> call = servicel.getResult(search);
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                if (response.isSuccessful()){
+                    Result result = response.body();
+                    Log.d(RETROFIT_TAG, "onResponse: 성공, 결과\n"+ result.toString());
+                    List<DigiCard> digicardList = result.getDigiCard();
+                    cards = new ArrayList<>();
+
+                    for(int i=0;i<digicardList.size();i++){
+                        Card card = new Card(digicardList.get(i));
+                        cards.add(card);
+                    }
+
+                    page = 1;
+                    showPage();
+                }
+                else{
+                    Log.d(RETROFIT_TAG, "onResponse: 실패");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                Log.d(RETROFIT_TAG,"onFailure: "+ t.getMessage());
+            }
+        });
     }
 
     public void onClickSearch(View view){
         EditText editText = findViewById(R.id.search_bar);
         String searchStr = editText.getText().toString();
-        try {
-            search(searchStr);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        searchFromApi(searchStr);
     }
 
     public ImgView_Card createShowCard(Card card, int pos){
@@ -68,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         //iv.setImageResource(getResources().getIdentifier(card.cardImgSrc,"raw", this.getPackageName()));//이미지 설정
 
         TextView tv = new TextView(this);
-        tv.setText(Integer.toString(pos + (page-1)*24));
+        tv.setText(Integer.toString(pos + (page-1)*16));
         tv.setId(R.id.card_id);
 
         rl.addView(iv, new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
@@ -121,8 +161,10 @@ public class MainActivity extends AppCompatActivity {
 
             Glide.with(this)
                     .load(img_str)
-                    .override(200,300)
-                    .thumbnail(0.1f)
+                    .override(100,150)
+                    .thumbnail(0.3f)
+                    .placeholder(R.drawable.card_back)
+                    .error(R.drawable.card_back)
                     .into(ivCard.iv);
         }
     }
@@ -150,40 +192,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void search(String searchStr) throws IOException {
-        cards = new ArrayList<>();
-        InputStreamReader is = new InputStreamReader(getResources().openRawResource(R.raw.digimon_card_info_utf));
-        BufferedReader reader = new BufferedReader(is);
-        String line;
-        reader.readLine();
-        while((line = reader.readLine())!=null){
-            String[] cardInfo = line.split("\\|");
-            boolean search_ch = false;
-            if(cardInfo[1].toUpperCase().contains(searchStr.toUpperCase())) search_ch = true;
-            if(cardInfo[2].contains(searchStr)) search_ch = true;
-            if(cardInfo[16].toUpperCase().contains(searchStr.toUpperCase())) search_ch = true;
-
-            if(search_ch){
-                Card card = new Card(cardInfo);
-                cards.add(card);
-            }
-        }
-
-        page = 1;
-        showPage();
-    }
-
     public void showPage(){
         clearView();
 
         ArrayList<ImgView_Card> imgView_srcs = new ArrayList<>();
 
         int pos = 0;
-        for(int i = (page-1)*24;i<Math.min(page*24,cards.size());i++,pos++){
+        for(int i = (page-1)*16;i<Math.min(page*16,cards.size());i++,pos++){
             imgView_srcs.add(createShowCard(cards.get(i), pos));
         }
 
-        int maxPage = Math.max((int)Math.ceil((cards.size()-1)/24.0f),1);
+        int maxPage = Math.max((int)Math.ceil((cards.size()-1)/16.0f),1);
         TextView tv = findViewById(R.id.text_page);
         tv.setText(page + " / " + maxPage);
 
@@ -194,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goNextPage(View view){
-        int maxPage = (int)Math.ceil(cards.size()/24.0f);
+        int maxPage = (int)Math.ceil(cards.size()/16.0f);
         page = Math.min(page+1,maxPage);
         showPage();
     }
@@ -219,11 +238,7 @@ public class MainActivity extends AppCompatActivity {
                 if (keyCode == KeyEvent.KEYCODE_ENTER){
                     EditText editText = findViewById(R.id.search_bar);
                     String searchStr = editText.getText().toString();
-                    try {
-                        search(searchStr);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    searchFromApi(searchStr);
                 }
                 return false;
             }
@@ -241,30 +256,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class OpenHttpConnection extends AsyncTask<Object, Void, Bitmap>{
-        private ImageView bmImage;
-        @Override
-        protected Bitmap doInBackground(Object... params) {
-            Bitmap mBitmap = null;
-            bmImage = (ImageView)params[0];
-            String url = (String)params[1];
-            InputStream in = null;
-            try{
-                in = new java.net.URL(url).openStream();
-                mBitmap = BitmapFactory.decodeStream(in);
-                in.close();
-            }catch (Exception ex){
-                ex.printStackTrace();
-            }
-            return mBitmap;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            super.onPostExecute(bitmap);
-            bmImage.setImageBitmap(bitmap);
-        }
-    }
 
 }
 

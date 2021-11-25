@@ -15,8 +15,6 @@ public class Card {
     public String cardEffect;
     public String cardEvEffect;
     public String cardSecurity;
-    public String cardPromo;
-    public String cardImgSrc;
     public String cardPr;
     public String cardColor;
 
@@ -37,6 +35,25 @@ public class Card {
         this.cardEvEffect = cardInfo[14];
         this.cardSecurity = cardInfo[15];
         this.cardPr = cardInfo[17];
+    }
+
+    public Card(DigiCard digicard){
+        this.cardID =  digicard.getCardNo();
+        this.cardName = digicard.getName();
+        this.cardKind = digicard.getKind();
+        this.cardColor = digicard.getColor();
+        this.cardLevel = digicard.getLevel();
+        this.cardForm = digicard.getAttrib1();
+        this.cardAttribute = digicard.getAttrib2();
+        this.cardType = digicard.getAttrib3();
+        this.cardDP = digicard.getDp();
+        this.cardCost = digicard.getCost();
+        this.cardEvCost1 = digicard.getEvCost();
+        this.cardEvCost2 = digicard.getEvCost2();
+        this.cardEffect = digicard.getEffect();
+        this.cardEvEffect = digicard.getEvEffect();
+        this.cardSecurity = digicard.getSecEffect();
+        this.cardPr = digicard.getPrCheck();
     }
 
     public String getColorStr(){
